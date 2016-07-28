@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class CareerMapManager : MonoBehaviour {
 
@@ -18,13 +19,15 @@ public class CareerMapManager : MonoBehaviour {
 	private bool canTap;
 	private float buttonAnimationSpeed = 9;
 
+
 	void Awake (){
 		canTap = true; //player can tap on buttons
 		
-		if(PlayerPrefs.HasKey("userLevelAdvance"))
-			userLevelAdvance = PlayerPrefs.GetInt("userLevelAdvance");
-		else
-			userLevelAdvance = 0; //default. only level 1 in open.
+		//if(PlayerPrefs.HasKey("userLevelAdvance"))
+			//userLevelAdvance = PlayerPrefs.GetInt("userLevelAdvance");
+		//else
+			userLevelAdvance = 5; //default. only level 1 in open.
+		PlayerPrefs.SetInt("userLevelAdvance", userLevelAdvance);
 	}
 
 
@@ -74,13 +77,39 @@ public class CareerMapManager : MonoBehaviour {
 				PlayerPrefs.SetInt("careerGoalBallance", objectHit.GetComponent<CareerLevelSetup>().careerGoalBallance);
 				PlayerPrefs.SetInt("careerAvailableTime", objectHit.GetComponent<CareerLevelSetup>().careerAvailableTime);
 				
-				int availableProducts = objectHit.GetComponent<CareerLevelSetup>().availableProducts.Length;
+				//int availableProducts = objectHit.GetComponent<CareerLevelSetup>().availableProducts.Length;
+				//added
+
+				int[] availableProductsArray=objectHit.GetComponent<CareerLevelSetup>().availableProducts;
+				int availableProducts = availableProductsArray.Length;
 				PlayerPrefs.SetInt("availableProducts", availableProducts); //save the length of availableProducts
-				for(int j = 0; j < availableProducts; j++) {
-					PlayerPrefs.SetInt(	"careerProduct_" + j.ToString(), 
-										objectHit.GetComponent<CareerLevelSetup>().availableProducts[j]);
+				for(int j = 0; j < availableProducts; j++)
+				{
+					PlayerPrefs.SetInt(	"careerProduct_" + j.ToString(), availableProductsArray[j]);
 				}
-				
+				//added
+
+
+
+				int availableSideRequests = objectHit.GetComponent<CareerLevelSetup>().availableSideRequests.Length;
+				PlayerPrefs.SetInt("availableSideRequests", availableSideRequests); //save the length of availableProducts
+				for(int j = 0; j < availableSideRequests; j++) {
+					PlayerPrefs.SetInt(	"careerSideRequest_" + j.ToString(), 
+						objectHit.GetComponent<CareerLevelSetup>().availableSideRequests[j]);
+				}
+
+				int availableCustomers = objectHit.GetComponent<CareerLevelSetup>().availableCustomers.Length;
+				PlayerPrefs.SetInt("availableCustomers", availableCustomers); //save the length of availableProducts
+				for (int j = 0; j < availableCustomers; j++)
+				{
+					PlayerPrefs.SetInt ("careerCustomer_" + j.ToString (), 
+						objectHit.GetComponent<CareerLevelSetup> ().availableCustomers [j]);
+				}
+
+
+
+
+				//
 				PlayerPrefs.SetInt( "canUseCandy", 
 									Convert.ToInt32(objectHit.GetComponent<CareerLevelSetup>().canUseCandy) );
 				

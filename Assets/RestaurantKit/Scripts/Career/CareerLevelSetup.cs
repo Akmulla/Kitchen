@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CareerLevelSetup : MonoBehaviour {
 	
@@ -18,6 +19,10 @@ public class CareerLevelSetup : MonoBehaviour {
 	public bool  canUseCandy = true;		//are we allowed to use candy
 	public int[] availableProducts;			//array of indexes of available products. starts from 1.
 
+	//added
+	public int[] availableSideRequests;	
+	public int[] availableCustomers;
+	//
 
 	void Start (){
 		
@@ -33,4 +38,5 @@ public class CareerLevelSetup : MonoBehaviour {
 			GetComponent<Renderer>().material.color = new Color(1,1,1,0.5f);
 		}
 	}
+
 }

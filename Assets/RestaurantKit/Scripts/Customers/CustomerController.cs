@@ -125,13 +125,29 @@ public class CustomerController : MonoBehaviour {
 			} else {
 				customerNeeds = Random.Range(0, availableProducts.Length);
 			}
+			//print (PlayerPrefs.GetString ("gameMode") == "CAREER");
 		}
 		//also let's give this customer a chance to wish a side-request.
-		if(Random.value > 0.3f)
-			customerSideReq = Random.Range(0, availableSideReqs.Length);
+		if  (Random.value > 0.3f)
+		{
+			if (PlayerPrefs.GetString ("gameMode") == "CAREER")
+			{
+				int totalAvailableSideRequests = PlayerPrefs.GetInt ("availableSideRequests");
+				if (totalAvailableSideRequests != 0) 
+				{
+					//added
+					customerSideReq = PlayerPrefs.GetInt ("careerSideRequest_" + Random.Range (0, totalAvailableSideRequests).ToString ());
+					customerSideReq -= 1;
+					//customerSideReq = Random.Range (0, totalAvailableSideRequests);
+					//
+				} else
+					customerSideReq = -1;
+			}	
+			else 
+				customerSideReq = Random.Range (0, availableSideReqs.Length);
+		}
 		else
 			customerSideReq = -1;
-			
 		//debug customer's wish	
 		print(customerName + " would like a " + availableProducts[customerNeeds].name + " and can wait for " + customerPatience + " seconds");
 		if(customerSideReq != -1)

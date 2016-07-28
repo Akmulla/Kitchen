@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{3CC2C445-8FFA-5B81-6F87-A95E91800B0F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_2;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;PLATFORM_SUPPORTS_ADS_ID;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_32;UNITY_EDITOR_WIN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\RestaurantKit\Scripts\Career\CareerLevelSetup.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Career\CareerMapManager.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Customers\CustomerController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\CandyController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\CandyMover.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\CoffeeMakerController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\GrillController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\IngredientsController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\PauseManager.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\PlateController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\ProductMover.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\SetActiveIngredients.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\SfxPlayer.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\SideRequestMover.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\SideRequestsController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\TextMeshController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\TextureScroller.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\TrashBinController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\MainControllerExamples\MainGameController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\ProductManager\ProductManager.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Shop\CoinpackProperties.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Shop\MoneyController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Shop\ShopController.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Shop\ShopItemProperties.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\UI\BackButton.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\UI\MenuController.cs" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

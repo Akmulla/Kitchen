@@ -62,6 +62,9 @@ public class MainGameController : MonoBehaviour {
 	//private int angryCustomer;
 	private int delay;					//delay between creating a new customer (smaller number leads to faster customer creation)
 	private bool  canCreateNewCustomer;	//flag to prevent double calls to functions
+	//added
+	int availableCustomers;
+	private int customer;
 
 	//Money and GameState
 	static public int totalMoneyMade;
@@ -204,7 +207,15 @@ public class MainGameController : MonoBehaviour {
 		StartCoroutine(reactiveCustomerCreation());
 		
 		//which customer?
-		GameObject tmpCustomer = customers[Random.Range(0, customers.Length)];
+		if(PlayerPrefs.GetString("gameMode") == "CAREER") {
+			int totalAvailableCustomers = PlayerPrefs.GetInt("availableCustomers");
+			customer = PlayerPrefs.GetInt( "careerCustomer_" + Random.Range(0, totalAvailableCustomers).ToString() );
+			customer -= 1; //Important. We count the indexes from zero, while selecting the products from 1.
+			//se we subtract a unit from customerNeeds to be equal to main AvailableProducts array.
+		} else {
+			customer = Random.Range(0, customers.Length);
+		}
+		GameObject tmpCustomer = customers[customer];
 		
 		//which seat
 		Vector3 seat = seatPositions[_seatIndex];

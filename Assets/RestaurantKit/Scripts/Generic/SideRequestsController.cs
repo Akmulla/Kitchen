@@ -67,7 +67,7 @@ public class SideRequestsController : MonoBehaviour {
 			GameObject objectHit = hitInfo.transform.gameObject;
 			if(objectHit.tag == "sideRequest" && objectHit.name == gameObject.name && !IngredientsController.itemIsInHand) {
 
-				if(!needsProcess)
+				if (!needsProcess)
 					createSideRequest();
 				else
 					createRawSideRequest();	//raw side request needs to be processed before use

@@ -9,6 +9,7 @@ public class IngredientsController : MonoBehaviour {
 
 	//public list of all available ingredients.
 	public GameObject[] ingredientsArray;
+
 	//Public ID of this ingredient. (used to build up the delivery queue based on customers orders)
 	public int factoryID;
 	public bool needsProcess = false;		//items that needs process, should first be moved to a machine
