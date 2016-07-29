@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class SetActiveSideRequests : MonoBehaviour {
-
+	public GameObject coffeeMaker;
 	// Use this for initialization
 	void Start () 
 	{
+		coffeeMaker.SetActive (false);
 		//GameObject[] sideRequests=GameObject.Find("GameController").GetComponent<MainGameController>().customers[0].GetComponent<CustomerController>().availableSideReqs;
 		SideRequestsController[] sideRequests = GetComponentsInChildren<SideRequestsController> ();
 		int sideRequestsCount = sideRequests.Length;
@@ -23,6 +24,8 @@ public class SetActiveSideRequests : MonoBehaviour {
 				//sideRequestNumber--;
 				for (int k=0;k<sideRequestsCount;k++)
 				{
+					if (sideRequestNumber == 4)
+						coffeeMaker.SetActive (true);
 					if (sideRequests [k].sideReqID == sideRequestNumber)
 						sideRequests [k].gameObject.SetActive (true);
 				}

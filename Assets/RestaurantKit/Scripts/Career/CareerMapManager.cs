@@ -26,7 +26,7 @@ public class CareerMapManager : MonoBehaviour {
 		//if(PlayerPrefs.HasKey("userLevelAdvance"))
 			//userLevelAdvance = PlayerPrefs.GetInt("userLevelAdvance");
 		//else
-			userLevelAdvance = 5; //default. only level 1 in open.
+			userLevelAdvance = 6; //default. only level 1 in open.
 		PlayerPrefs.SetInt("userLevelAdvance", userLevelAdvance);
 	}
 
