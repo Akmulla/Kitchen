@@ -57,6 +57,7 @@
      <Compile Include="Assets\RestaurantKit\Scripts\Generic\PlateController.cs" />
      <Compile Include="Assets\RestaurantKit\Scripts\Generic\ProductMover.cs" />
      <Compile Include="Assets\RestaurantKit\Scripts\Generic\SetActiveIngredients.cs" />
+     <Compile Include="Assets\RestaurantKit\Scripts\Generic\SetActiveSideRequests.cs" />
      <Compile Include="Assets\RestaurantKit\Scripts\Generic\SfxPlayer.cs" />
      <Compile Include="Assets\RestaurantKit\Scripts\Generic\SideRequestMover.cs" />
      <Compile Include="Assets\RestaurantKit\Scripts\Generic\SideRequestsController.cs" />

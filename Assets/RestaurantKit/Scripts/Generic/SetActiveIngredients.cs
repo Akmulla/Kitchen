@@ -7,12 +7,6 @@ public class SetActiveIngredients : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-
-
-
-
-
-
 		GameObject[] products=GameObject.Find("GameController").GetComponent<MainGameController>().customers[0].GetComponent<CustomerController>().availableProducts;
 
 		IngredientsController[] ingredients = GetComponentsInChildren<IngredientsController> ();
