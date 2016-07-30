@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/RestaurantKit/Scenes/LevelSelection-c#.unity
+- path: Assets/RestaurantKit/Scenes/Menu-c#.unity
   isLoaded: 1
   isActive: 1

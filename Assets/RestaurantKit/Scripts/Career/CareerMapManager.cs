@@ -23,10 +23,10 @@ public class CareerMapManager : MonoBehaviour {
 	void Awake (){
 		canTap = true; //player can tap on buttons
 		
-		//if(PlayerPrefs.HasKey("userLevelAdvance"))
-			//userLevelAdvance = PlayerPrefs.GetInt("userLevelAdvance");
-		//else
-			userLevelAdvance = 7; //default. only level 1 in open.
+		if(PlayerPrefs.HasKey("userLevelAdvance"))
+			userLevelAdvance = PlayerPrefs.GetInt("userLevelAdvance");
+		else
+			userLevelAdvance = 0; //default. only level 1 in open.
 		PlayerPrefs.SetInt("userLevelAdvance", userLevelAdvance);
 	}
 

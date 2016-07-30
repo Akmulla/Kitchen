@@ -10,25 +10,34 @@ public class SetActiveSideRequests : MonoBehaviour {
 		//GameObject[] sideRequests=GameObject.Find("GameController").GetComponent<MainGameController>().customers[0].GetComponent<CustomerController>().availableSideReqs;
 		SideRequestsController[] sideRequests = GetComponentsInChildren<SideRequestsController> ();
 		int sideRequestsCount = sideRequests.Length;
-		for (int i = 0; i < sideRequestsCount; i++)
-		{
-			sideRequests [i].gameObject.SetActive (false);
-		}
+
 
 		if (PlayerPrefs.GetString ("gameMode") == "CAREER")
 		{
-			int totalAvailableSideRequests = PlayerPrefs.GetInt("availableSideRequests");
+			for (int i = 0; i < sideRequestsCount; i++)
+			{
+				sideRequests [i].gameObject.SetActive (false);
+			}
+			int totalAvailableSideRequests = PlayerPrefs.GetInt ("availableSideRequests");
 			for (int i = 0; i < totalAvailableSideRequests; i++)
 			{
-				int sideRequestNumber=PlayerPrefs.GetInt( "careerSideRequest_"+i.ToString());
+				int sideRequestNumber = PlayerPrefs.GetInt ("careerSideRequest_" + i.ToString ());
 				//sideRequestNumber--;
-				for (int k=0;k<sideRequestsCount;k++)
+				for (int k = 0; k < sideRequestsCount; k++)
 				{
 					if (sideRequestNumber == 4)
 						coffeeMaker.SetActive (true);
 					if (sideRequests [k].sideReqID == sideRequestNumber)
 						sideRequests [k].gameObject.SetActive (true);
 				}
+			}
+		}
+		else
+		{
+			coffeeMaker.SetActive (true);
+			for (int i = 0; i < sideRequestsCount; i++)
+			{
+				sideRequests [i].gameObject.SetActive (true);
 			}
 		}
 		/*GameObject[] sideRequests=GameObject.Find("GameController").GetComponent<MainGameController>().customers[0].GetComponent<CustomerController>().availableSideReqs;
