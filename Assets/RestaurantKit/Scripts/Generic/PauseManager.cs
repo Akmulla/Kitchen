@@ -112,6 +112,11 @@ public class PauseManager : MonoBehaviour {
 					case "End-Restart":
 						Application.LoadLevel(Application.loadedLevelName);
 						break;
+
+					//added
+					case "End-LevelSelection":
+						Application.LoadLevel ("LevelSelection-c#");
+						break;
 				}
 			}
 		}
